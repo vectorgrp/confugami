@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Collapse lock file diffs on GitHub and skip them in `git diff`
+Cargo.lock -diff linguist-generated
+pnpm-lock.yaml -diff linguist-generated
