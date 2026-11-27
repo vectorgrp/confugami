@@ -83,11 +83,14 @@ Extract the `cfu` executable (`cfu.exe` on Windows) from the `confugami-<version
 
 See the [Confµgami Manual](https://help.vector.com/confugami/user-manual/index.html) for the full feature reference.
 
-## Examples
+## IDE
 
-You can find many configuration and definition examples in the `test/` directory.
-The corresponding JSON schemas for these examples are generated in the `test/schemas/` directory by the test suite (`./cb test`).
-You can use these examples as a reference for creating your own definitions and configurations.
+### VSCode
+
+The project includes a VSCode extension that connects to the `Confµgami` LSP server.
+
+* Install it from the Visual Studio Code Marketplace: open the **Extensions** sidebar and search for **Confugami**.
+  Without a `cfu` on the machine, the extension downloads the latest release.
 
 ## Commandline Usage
 
