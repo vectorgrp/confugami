@@ -16,7 +16,53 @@ The commandline tool is called `cfu`.
 ## Documentation
 
 * [Confµgami Manual](https://help.vector.com/confugami/user-manual/index.html) - Configuration and definition development and usage
-* [Confµgami Playground](https://help.vector.com/confugami/playground) - Online playground with IDE
+* [Confµgami Playground](https://help.vector.com/confugami/playground/) - Online playground with IDE
+
+## Installation
+
+To install the `cfu` binary only of the latest release into the current directory, execute the following:
+
+Linux/macOS/WSL/Windows (bash):
+
+```bash
+curl -fsSL https://help.vector.com/confugami/install.sh | bash
+```
+
+Windows (PowerShell):
+
+```powershell
+irm https://help.vector.com/confugami/install.ps1 | iex
+```
+
+Both scripts take `--version <version>` to install a specific release and `--pin` to write a `.confu`
+next to the binary that disables the auto update:
+
+```bash
+curl -fsSL https://help.vector.com/confugami/install.sh | bash -s -- --version 0.36.0 --pin
+```
+
+```powershell
+& ([scriptblock]::Create((irm https://help.vector.com/confugami/install.ps1))) --version 0.36.0 --pin
+```
+
+An installed `cfu` checks for a newer release in the background on start and updates itself after the
+command has finished. Disable it per call with `--no-auto-update`, per environment with
+`CONFUGAMI_AUTO_UPDATE=false`, or per installation with `--pin` (see
+[Automatic Updates](https://help.vector.com/confugami/user-manual/cli/automatic-updates.html)).
+
+## Manual Download
+
+The install scripts download the `cfu` archive from the public maven repository [veHub](https://packages.vehub.vector.com/maven/com/vector/confugami/cfu/maven-metadata.xml).
+To download an archive manually, replace `<version>` with a release, for example `0.35.0`, in the link for your platform:
+
+| Platform              | Archive                                                                                                                    |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------|
+| Windows               | `https://packages.vehub.vector.com/maven/com/vector/confugami/cfu/<version>/cfu-<version>-x86_64-pc-windows-msvc.zip`      |
+| Linux                 | `https://packages.vehub.vector.com/maven/com/vector/confugami/cfu/<version>/cfu-<version>-x86_64-unknown-linux-gnu.tar.gz` |
+| macOS (Apple silicon) | `https://packages.vehub.vector.com/maven/com/vector/confugami/cfu/<version>/cfu-<version>-aarch64-apple-darwin.tar.gz`     |
+| macOS (Intel)         | `https://packages.vehub.vector.com/maven/com/vector/confugami/cfu/<version>/cfu-<version>-x86_64-apple-darwin.tar.gz`      |
+
+Extract the `cfu` executable (`cfu.exe` on Windows) from the `confugami-<version>-<platform>` folder in the archive.
 
 ## Features
 
